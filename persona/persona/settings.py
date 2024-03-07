@@ -96,6 +96,7 @@ DATABASES = {
     }
 }
 
+ALLOWED_HOSTS = ['*']  # Quiza sea algo peligroso, pero por ahora lo dejamos asi
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
