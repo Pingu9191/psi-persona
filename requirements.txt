@@ -1,21 +1,23 @@
 asgiref==3.7.2
 Brotli==1.0.9
+click==8.1.7
 coverage==6.4.3
 dj-database-url==2.1.0
 Django==4.2.2
+django-cors-headers==4.3.1
+djangorestframework==3.14.0
 flake8==6.1.0
 gunicorn==21.2.0
+h11==0.14.0
 mccabe==0.7.0
 packaging==23.2
 Pillow==9.4.0
-# change psycopg2 by psycopg2-binary if the application cannot connect to postgres
-# DON'T INSTALL BOTH PACKAGES
-psycopg2-binary==2.9.7
+psycopg2==2.9.7
 pycodestyle==2.11.1
 pyflakes==3.1.0
 python-dotenv==1.0.0
+pytz==2024.1
 sqlparse==0.4.4
 typing_extensions==4.9.0
+uvicorn==0.27.1
 whitenoise==5.2.0
-django-cors-headers==4.3.1
-djangorestframework==3.14.0
