@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 
+import dj_database_url
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +27,8 @@ SECRET_KEY = 'django-insecure-xis_$+*-dxb^+e1f6jkl)s^96vagycsymx$z_v^1+bur6!f(fp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "api-persona-4j4g.onrender.com"]
+ALLOWED_HOSTS = ['*']  # Quiza sea algo peligroso, pero por ahora lo dejamos asi
+# ALLOWED_HOSTS = ["localhost", "api-persona-4j4g.onrender.com"]
 
 
 # Application definition
@@ -56,7 +59,7 @@ MIDDLEWARE = [
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:5173",
-    "https://psi-p2-eazj.onrender.com/",
+    "https://psi-p2-eazj.onrender.com"
 ]
 
 # No es estricatamente necesario
@@ -97,6 +100,16 @@ from dotenv import load_dotenv
 print("Using neon server...")
 print("It could go a bit slower.")
 # Replace the DATABASES section of your settings.py with this
+
+password = getenv('PGPASSWORD')
+
+NEON_URL = (
+    'postgresql://ignacio.nunnez:{password}@'
+    'ep-yellow-sun-a20bfr41.eu-central-1.aws.neon.tech'
+    '/persona?sslmode=require'
+)
+
+db_from_env = dj_database_url.config(default=NEON_URL, conn_max_age=500)
 DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.postgresql',
@@ -104,14 +117,12 @@ DATABASES = {
     'USER': getenv('PGUSER'),
     'PASSWORD': getenv('PGPASSWORD'),
     'HOST': getenv('PGHOST'),
-    'PORT': getenv('PGPORT', 5432),
+    'PORT': '5432',
     'OPTIONS': {
-      'sslmode': 'require',
-    },
-  }
+        'sslmode': 'require',
+        }
+ }
 }
-
-ALLOWED_HOSTS = ['*']  # Quiza sea algo peligroso, pero por ahora lo dejamos asi
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
