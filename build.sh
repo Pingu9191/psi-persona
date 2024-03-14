@@ -11,3 +11,6 @@ echo "PGDATABASE=$PGDATABASE"
 echo "PGHOST=$PGHOST"
 echo "PGPASSWORD=$PGPASSWORD"
 echo "PGUSER=$PGUSER"
+
+#crear superusuario
+python3 manage.py createsuperuser --noinput --username alumnodb --email alumnodb@alumnodb.com --password alumnodb
