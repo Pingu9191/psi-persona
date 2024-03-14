@@ -10,14 +10,6 @@ def main():
     import os
     import django
 
-    # Establecer las variables de entorno aquí
-    os.environ.setdefault("PGDATABASE", "persona")
-    os.environ.setdefault("PGUSER", "ignacio.nunnez")
-    os.environ.setdefault("PGPASSWORD", "WQjce6b7izlA")
-    os.environ.setdefault("PGHOST", "ep-yellow-sun-a20bfr41.eu-central-1.aws.neon.tech")
-
-    # Resto del código para iniciar Django
-
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'persona.settings')
     try:
         from django.core.management import execute_from_command_line

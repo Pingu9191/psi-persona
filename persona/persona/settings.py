@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-xis_$+*-dxb^+e1f6jkl)s^96vagycsymx$z_v^1+bur6!f(fp
 DEBUG = True
 
 # ALLOWED_HOSTS = ['*']  # Quiza sea algo peligroso, pero por ahora lo dejamos asi
-ALLOWED_HOSTS = ["localhost", "api-persona-4j4g.onrender.com"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "api-persona-4j4g.onrender.com"]
 
 
 # Application definition
