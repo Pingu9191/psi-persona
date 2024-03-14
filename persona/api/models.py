@@ -4,8 +4,8 @@ from django.db import models
 
 class Persona(models.Model):
     id = models.AutoField(primary_key=True)
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
+    nombre = models.CharField(max_length=100)
+    apellido = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
 
     def __str__(self):
@@ -13,4 +13,3 @@ class Persona(models.Model):
     
     class Meta:
         ordering = ['id']
-        db_table = 'auth_user'
